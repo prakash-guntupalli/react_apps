@@ -27,7 +27,8 @@ class Todo extends React.Component {
         })
     }
     handleCheck(event){
-        //todo
+        let element = event.target;
+        let textElement = element.parentNode.parentNode.firstElementChild.childNodes[1];
     }
     render() {
         let todoItem = this.state.task;
@@ -42,7 +43,7 @@ class Todo extends React.Component {
                 <h2>Today's Todo List</h2>
                 <ul>
                     {todoList.map( (item, idx) => {
-                        return <CheckBox item={item} handleCheck={this.handleCheck}/>
+                        return <CheckBox item={item} key={idx} handleCheck={this.handleCheck}/>
                         // return <li key={idx}>{item}</li>
                     })
                     }
@@ -55,11 +56,14 @@ class Todo extends React.Component {
 
 const CheckBox = (props) => {
     return (
-        <label>
-            <input type="checkbox" onChange={props.handleCheck} />
-            {props.item}
-            <br />
-        </label>
+        <div>
+            <label>
+                <input type="checkbox" onChange={props.handleCheck} />
+                <span>{props.item}</span>
+                <br />
+            </label>
+
+        </div>
     )
 }
 
