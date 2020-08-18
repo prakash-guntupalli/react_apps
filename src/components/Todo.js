@@ -28,7 +28,6 @@ class Todo extends React.Component {
     }
     handleCheck(event){
         let element = event.target;
-        let textElement = element.parentNode.parentNode.firstElementChild.childNodes[1];
     }
     render() {
         let todoItem = this.state.task;
@@ -59,7 +58,7 @@ const CheckBox = (props) => {
         <div>
             <label>
                 <input type="checkbox" onChange={props.handleCheck} />
-                <span>{props.item}</span>
+                <span className='add-item'>{props.item}</span>
                 <br />
             </label>
 
