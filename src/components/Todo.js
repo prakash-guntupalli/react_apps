@@ -4,6 +4,10 @@ import AddIcon from '@material-ui/icons/Add';
 import Fab from '@material-ui/core/Fab';
 import Tooltip from '@material-ui/core/Tooltip';
 
+import { connect } from 'react-redux';
+
+import { addTask } from '../redux/store';
+
 import List from './List';
 // import Completed from './Completed';
 
@@ -13,8 +17,7 @@ class Todo extends React.Component {
         super(props);
 
         this.state = {
-            task : '',
-            list : []
+            task : ''
         }
     }
 
@@ -25,15 +28,14 @@ class Todo extends React.Component {
     }
     addItem(){
         if(this.state.task){
+            this.props.submitNewTask(this.state.task);
             this.setState({
-                list : [...this.state.list, this.state.task],
                 task : ''
             })
         }
     }
     render() {
         let todoItem = this.state.task;
-        let todoList = this.state.list;
 
         return (
             <div style = {{margin: '10%' }}>
@@ -46,15 +48,17 @@ class Todo extends React.Component {
                         <AddIcon />
                     </Fab>
                 </Tooltip>
-
-                {todoList.map( (item, idx) => {
-                    return <List item={item} key={idx} />
-                })
-                }
-
             </div>
         )
     }
 }
 
-export default Todo;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        submitNewTask : (task) => {
+            dispatch(addTask(task))
+        }
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Todo);

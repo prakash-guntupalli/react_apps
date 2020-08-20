@@ -2,9 +2,9 @@ import React from 'react';
 
 const Completed = (props) => {
     return (
-        <div style={{margin: '5px'}}>
+        <div style = {{margin: '10%' }}>
+            <h3> Completed Tasks </h3>
             <label>
-                {/* <input type="checkbox" onChange={props.handleCheck} style={{ margin: '0 5px 0 0' }}/> */}
                 <span className='completed-item'>{props.item}</span>
                 <br />
             </label>
