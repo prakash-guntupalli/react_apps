@@ -4,13 +4,13 @@ import { toggleStatus } from '../redux/store';
 
 
 const List = (props) => {
-    let todoList = props.list;
+    let todoList = props.list.filter(item => item.completed !== true);
     return (
-        <div style = {{margin: '10%' }}>
+        <div style = {{margin: '2% 10%' }}>
             {todoList.map( (item) => {
                 return (
                     <div style={{margin: '5px'}} key={item.id}>
-                        <input type="checkbox" onChange={() => props.markComplete(item.id)} style={{ margin: '0 5px 0 0' }}/>
+                        <input type="checkbox" onChange={() => props.markComplete(item.id, true)} style={{ margin: '0 5px 0 0' }}/>
                         <span className='add-item'>{item.name}</span>
                         <br />
 
@@ -30,8 +30,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        markComplete : (id) => {
-            dispatch(toggleStatus(id))
+        markComplete : (id, status) => {
+            dispatch(toggleStatus(id, status))
         }
     }
 }

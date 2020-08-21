@@ -3,10 +3,9 @@ import { createStore } from "redux";
 
 
 const ADD = 'ADD';
-const COMPLETED = 'COMPLETED';
+const TOGGLE = 'TOGGLE';
 
-const initState = 
-    [{id:99998, name: 'Todo99998'},{id:99999, name:'Todo99999'}]
+const initState = [];
 
 let tempId = 0;
 
@@ -20,11 +19,12 @@ export const addTask = (task) => {
     }
 }
 
-export const toggleStatus = (id) => {
+export const toggleStatus = (id, status) => {
     return {
-        type : COMPLETED,
+        type : TOGGLE,
         payload : {
-            id
+            id,
+            status
         }
     }
 }
@@ -43,12 +43,14 @@ const listReducer = (state = initState, action) => {
             ]
         }
 
-        case COMPLETED : {
-            let { id } = action.payload;
+        case TOGGLE : {
+            let { id, status } = action.payload;
+            let currentTask = state.filter( i => i.id === id);
+            currentTask[0].completed = status;
             let newState = state.filter( i => {
                 return i.id !== id;
             })
-            return newState;
+            return [...newState, currentTask[0]];
         }
 
         default :
