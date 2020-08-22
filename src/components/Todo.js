@@ -4,7 +4,7 @@ import AddIcon from '@material-ui/icons/Add';
 import Fab from '@material-ui/core/Fab';
 import Tooltip from '@material-ui/core/Tooltip';
 import { connect } from 'react-redux';
-import { addTask } from '../redux/store';
+import { addTask } from '../redux/actions';
 
 
 class Todo extends React.Component {

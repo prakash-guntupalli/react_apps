@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { toggleStatus } from '../redux/store';
+import { toggleStatus } from '../redux/actions';
 
 
 const List = (props) => {
