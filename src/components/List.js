@@ -6,7 +6,7 @@ import { toggleStatus } from '../redux/actions';
 const List = (props) => {
     let todoList = props.list.filter(item => item.completed !== true);
     return (
-        <div style = {{margin: '2% 10%' }}>
+        <div>
             {todoList.map( (item) => {
                 return (
                     <div style={{margin: '5px'}} key={item.id}>
