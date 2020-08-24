@@ -20,3 +20,8 @@ code {
     justify-content: center;
     align-items: center;
 }
+
+.flex-container_list {
+    min-width: 240px;
+    min-height: 140px;
+}

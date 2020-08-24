@@ -9,9 +9,9 @@ const Completed = (props) => {
     return (
         <React.Fragment>
             {
-                completedList && 
+                completedList.length > 0 && 
                 <div>
-                    {/* <h3> Completed List </h3> */}
+                    <h3> Completed List </h3>
                     {completedList.map( (item) => {
                         return (
                             <div style={{margin: '5px'}} key={item.id}>

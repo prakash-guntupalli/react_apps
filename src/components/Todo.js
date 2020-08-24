@@ -34,26 +34,15 @@ class Todo extends React.Component {
         let todoItem = this.state.task;
 
         return (
-            <div className="flex-container">
+            <div>
                 <h2> Todo List</h2>
                 <br />
-                <div>
-                    <TextField id="standard-basic" label="Add Item" value={todoItem} onChange={(e) => this.textChange(e)}/>
-                    <Tooltip title="Add" aria-label="add" onClick={()=> this.addItem()}>
-                        <Fab color="primary" style = {{'margin': 5}}>
-                            <AddIcon />
-                        </Fab>
-                    </Tooltip>
-                </div>
-                <br />
-                <TextField
-                    id="datetime-local"
-                    label="Date and Time (optional)"
-                    type="datetime-local"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                />
+                <TextField id="standard-basic" label="Add Item" value={todoItem} onChange={(e) => this.textChange(e)}/>
+                <Tooltip title="Add" aria-label="add" onClick={()=> this.addItem()}>
+                    <Fab color="primary" style = {{'margin': 5}}>
+                        <AddIcon />
+                    </Fab>
+                </Tooltip>
             </div>
         )
     }

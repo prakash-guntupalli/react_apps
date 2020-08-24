@@ -7,10 +7,14 @@ import Completed from './components/Completed';
 class TodoList extends React.Component{
     render(){
         return(
-            <div>
+            <div className="flex-container">
                 <Todo />
-                <List />
-                <Completed />
+                <div className="flex-container_list">
+                    <List />
+                </div>
+                <div className="flex-container_list">
+                    <Completed />
+                </div>
             </div>
         )
     }
