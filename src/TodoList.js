@@ -12,10 +12,8 @@ class TodoList extends React.Component{
             <div className="flex-container">
                 <Quote />
                 <Todo />
-                <div className="flex-container_list">
+                <div className="flex-list">
                     <List />
-                </div>
-                <div className="flex-container_list">
                     <Completed />
                 </div>
             </div>

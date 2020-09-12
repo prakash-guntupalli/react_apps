@@ -6,7 +6,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    background-color: moccasin;
+    background-color: turquoise;
 }
   
 code {
@@ -17,11 +17,13 @@ code {
 .flex-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
-.flex-container_list {
-    min-width: 240px;
-    min-height: 140px;
+.flex-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
 }
+

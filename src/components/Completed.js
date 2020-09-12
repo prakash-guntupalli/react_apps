@@ -11,7 +11,7 @@ const Completed = (props) => {
             {
                 completedList.length > 0 && 
                 <div>
-                    <h3> Completed List </h3>
+                    <h4> Finished </h4>
                     {completedList.map( (item) => {
                         return (
                             <div style={{margin: '5px'}} key={item.id}>
